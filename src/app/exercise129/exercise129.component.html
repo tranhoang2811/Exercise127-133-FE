@@ -1,1 +1,42 @@
-<p>exercise129 works!</p>
+<h3>Get fashion detail</h3>
+<label for="fashionId">Fashion Id:</label>
+<input type="text" id="fashionId" [(ngModel)]="fashionId">
+<button (click)="getFashion()">
+    Detail
+</button>
+<div class="container">
+    <table>
+        <tr>
+            <td>Id:</td>
+            <td>
+                {{fashion?.id ?? 'N/A'}}
+            </td>
+        </tr>
+        <tr>
+            <td>Style:</td>
+            <td>
+                {{fashion?.style ?? 'N/A'}}
+            </td>
+        </tr>
+        <tr>
+            <td>Subject:</td>
+            <td>
+                {{fashion?.subject ?? 'N/A'}}
+            </td>
+        </tr>
+        <tr>
+            <td>Detail:</td>
+            <td>
+                {{fashion?.detail ?? 'N/A'}}
+            </td>
+        </tr>
+        <tr>
+            <td [attr.colspan]="2" style="text-align: center;">
+                <img src="{{fashion?.image}}" alt="fashion Image" width="200px">
+            </td>
+        </tr>
+    </table>
+    <div *ngIf="errorMessage">
+        {{errorMessage}}
+    </div>
+</div>

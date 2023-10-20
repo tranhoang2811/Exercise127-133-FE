@@ -1,1 +1,32 @@
-<p>exercise130 works!</p>
+<form [formGroup]="createFashionForm" (submit)="onSubmit()">
+    <div>
+        <label for="style">
+            Fashion Style:
+        </label>
+        <input type="text" id="style" formControlName="style" placeholder="Nhập Style">
+    </div>
+    <div>
+        <label for="subject">
+            Fashion Subject:
+        </label>
+        <input type="text" id="subject" formControlName="subject" placeholder="Nhập Subject">
+    </div>
+    <div>
+        <label for="detail">
+            Fashion Detail:
+        </label>
+        <input type="text" id="detail" formControlName="detail" placeholder="Nhập Detail">
+    </div>
+    <div>
+        <label for="image">
+            Fashion Image:
+        </label>
+        <input type="file" id="image" class="file-input" (change)="onFileSelected($event)">
+    </div>
+    <button type="submit">
+        Create
+    </button>
+</form>
+<div *ngIf="errorMessage">
+    {{errorMessage}}
+</div>

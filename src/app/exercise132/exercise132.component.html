@@ -1,1 +1,37 @@
-<p>exercise132 works!</p>
+<h3 class="text-center text-white bg-dark p-3">Fashion list</h3>
+<label for="fashionId">Fashion Id:</label>
+<input type="text" id="fashionId" [(ngModel)]="fashionId">
+<button (click)="deleteFashion()">
+    Delete
+</button>
+<div class="contaner">
+    <table class="table table -hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Subject</th>
+                <th>Detail</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let fashion of fashions">
+                <td>
+                    {{fashion.id}}
+                </td>
+                <td>
+                    {{fashion.subject}}
+                </td>
+                <td>
+                    {{fashion.detail}}
+                </td>
+                <td>
+                    <img [src]="fashion.image" width="60px">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        {{errorMessage}}
+    </div>
+</div>
