@@ -1,0 +1,11 @@
+<div class="modal-header">
+    <h5 class="modal-title">Delete fashion</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeModal()"></button>
+</div>
+<div class="modal-body">
+    <p>Do you want to delete {{fashionTitle}} fashion?. Click the button below to confirm</p>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="deleteFashion()">Delete</button>
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closeModal()">Close</button>
+</div>
