@@ -1,0 +1,31 @@
+<div class="d-flex align-items-center justify-content-center">
+    <div class="w-50 px-4">
+        <h3>Fashion Detail</h3>
+        <div>
+            <h4>
+                Title:
+            </h4>
+            <p>{{fashion?.title}}</p>
+        </div>
+        <div>
+            <h4>
+                Detail:
+            </h4>
+            <p [innerHtml]="fashion?.detail"></p>
+        </div>
+        <div>
+            <h4>
+                Style:
+            </h4>
+            <p>
+                {{fashion?.style?.[0]?.name | uppercase}}
+            </p>
+        </div>
+        <div style="margin: 8px 0px;">
+            <img [src]="fashion?.thumbnail" alt="Thumbnail">
+        </div>
+    </div>
+    <div *ngIf="errorMessage">
+        {{errorMessage}}
+    </div>
+</div>

@@ -5,9 +5,11 @@ import { Exercise129Component } from './exercise129/exercise129.component';
 import { Exercise130Component } from './exercise130/exercise130.component';
 import { Exercise131Component } from './exercise131/exercise131.component';
 import { Exercise132Component } from './exercise132/exercise132.component';
-import { CreateFashionComponent } from './exercise133/create-fashion/create-fashion.component';
-import { FashionListComponent } from './exercise133/fashion-list/fashion-list.component';
-import { UpdateFashionComponent } from './exercise133/update-fashion/update-fashion.component';
+import { AdminFashionListComponent } from './exercise133/admin/admin-fashion-list/admin-fashion-list.component';
+import { CreateFashionComponent } from './exercise133/admin/create-fashion/create-fashion.component';
+import { UpdateFashionComponent } from './exercise133/admin/update-fashion/update-fashion.component';
+import { ClientFashionListComponent } from './exercise133/client/client-fashion-list/client-fashion-list.component';
+import { FashionDetailComponent } from './exercise133/client/fashion-detail/fashion-detail.component';
 
 const routes: Routes = [
   {
@@ -31,17 +33,25 @@ const routes: Routes = [
     component: Exercise132Component,
   },
   {
-    path: 'exercise-133',
-    component: FashionListComponent,
+    path: 'exercise-133/admin',
+    component: AdminFashionListComponent,
   },
   {
-    path: 'exercise-133/new',
+    path: 'exercise-133/admin/new',
     component: CreateFashionComponent,
   },
   {
-    path: 'exercise-133/:id',
+    path: 'exercise-133/admin/:id',
     component: UpdateFashionComponent,
   },
+  {
+    path: 'exercise-133/client',
+    component: ClientFashionListComponent,
+  },
+  {
+    path: 'exercise-133/client/:id',
+    component: FashionDetailComponent
+  }
 ];
 
 @NgModule({

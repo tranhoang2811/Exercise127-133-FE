@@ -11,11 +11,13 @@ import { Exercise129Component } from './exercise129/exercise129.component';
 import { Exercise130Component } from './exercise130/exercise130.component';
 import { Exercise131Component } from './exercise131/exercise131.component';
 import { Exercise132Component } from './exercise132/exercise132.component';
-import { FashionListComponent } from './exercise133/fashion-list/fashion-list.component';
-import { CreateFashionComponent } from './exercise133/create-fashion/create-fashion.component';
-import { UpdateFashionComponent } from './exercise133/update-fashion/update-fashion.component';
-import { DeleteFashionModalComponent } from './exercise133/delete-fashion-modal/delete-fashion-modal.component';
+import { ClientFashionListComponent } from './exercise133//client/client-fashion-list/client-fashion-list.component';
+import { CreateFashionComponent } from './exercise133/admin/create-fashion/create-fashion.component';
+import { UpdateFashionComponent } from './exercise133/admin/update-fashion/update-fashion.component';
+import { DeleteFashionModalComponent } from './exercise133/admin/delete-fashion-modal/delete-fashion-modal.component';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { FashionDetailComponent } from './exercise133/client/fashion-detail/fashion-detail.component';
+import { AdminFashionListComponent } from './exercise133/admin/admin-fashion-list/admin-fashion-list.component';
 
 @NgModule({
   declarations: [
@@ -25,10 +27,12 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
     Exercise130Component,
     Exercise131Component,
     Exercise132Component,
-    FashionListComponent,
+    AdminFashionListComponent,
     CreateFashionComponent,
     UpdateFashionComponent,
     DeleteFashionModalComponent,
+    ClientFashionListComponent,
+    FashionDetailComponent,
   ],
   imports: [
     BrowserModule,

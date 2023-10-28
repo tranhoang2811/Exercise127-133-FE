@@ -14,10 +14,16 @@ export class AdvanceFashionService {
     private errorService: ErrorService
   ) {}
 
-  public getFashions(style: string = ''): Observable<IStyle[]> {
+  public getClientFashions(style: string = ''): Observable<IStyle[]> {
     return this.httpClient
-      .get<IStyle[]>(`/advance-fashions?style=${style}`)
+      .get<IStyle[]>(`/advance-fashions/client?style=${style}`)
       .pipe(retry(3), catchError(this.errorService.handleError));
+  }
+
+  public getAdminFashions(): Observable<IAdvanceFashion[]> {
+    return this.httpClient
+      .get<IAdvanceFashion[]>('/advance-fashions/admin')
+      .pipe(catchError(this.errorService.handleError));
   }
 
   public createFashion(fashion: IAdvanceFashion): Observable<IAdvanceFashion> {

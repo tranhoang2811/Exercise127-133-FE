@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-between" style="margin: 12px 116px;">
+<div class="d-flex justify-content-center">
     <div class="input-group border border-dark rounded">
         <i class="bi bi-search"></i>
         <input type="text" class="form-control border-0" list="style-options"
@@ -10,13 +10,9 @@
         </datalist>
         <button class="btn btn-dark px-4">Search</button>
     </div>
-    <button class="btn btn-dark px-4" (click)="gotoCreateFashion()">
-        Create new fashion
-    </button>
 </div>
 <div>
     <div class="container" *ngFor="let style of fashionsGroupByStyle">
-
         <ng-container *ngIf="style.fashions.length">
             <hr>
             <h2>
@@ -25,7 +21,7 @@
             <hr>
             <div class="row row-cols-4">
                 <div class="col" *ngFor="let fashion of style.fashions">
-                    <a [routerLink]="['/exercise-133', fashion.id]">
+                    <a [routerLink]="['/exercise-133/client', fashion.id]">
                         <img [src]="fashion.thumbnail" alt="Thumbnail">
                         <p>
                             {{fashion.title}}

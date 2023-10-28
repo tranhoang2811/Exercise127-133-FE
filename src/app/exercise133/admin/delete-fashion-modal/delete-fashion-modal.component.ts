@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { AdvanceFashionService } from 'src/app/services/advance-fashion.service';
 
@@ -16,14 +15,13 @@ export class DeleteFashionModalComponent {
   constructor(
     private activeModal: NgbActiveModal,
     private advanceFashionService: AdvanceFashionService,
-    private router: Router
   ) {}
 
   public deleteFashion(): void {
     if (this.fashionId) {
       this.advanceFashionService.deleteFashion(this.fashionId).subscribe({
         next: () => {
-          this.router.navigate(['/exercise-133']);
+          window.location.reload();
           this.activeModal.close();
         },
         error: (error) => {

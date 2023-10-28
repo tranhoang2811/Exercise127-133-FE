@@ -1,0 +1,32 @@
+<div class="w-100 px-4">
+    <h1 class="font-weight-light">Fashion management</h1>
+    <button type="button" class="btn px-0 text-primary" (click)="gotoCreateFashion()">Create New</button>
+    <table class="table table-hover">
+        <thead>
+            <tr class="border-bottom border-top border-dark">
+                <th>Thumbnail</th>
+                <th>Title</th>
+                <th>Style</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let fashion of fashions">
+                <td>
+                    <img [src]="fashion.thumbnail" alt="Thumbnail">
+                </td>
+                <td>
+                    {{ fashion.title }}
+                </td>
+                <td>
+                    {{ fashion.style?.[0]?.name | uppercase }}
+                </td>
+                <td>
+                    <div class="d-flex justify-content-between">
+                        <i class="bi bi-pencil" (click)="gotoUpdateFashion(fashion.id)"></i>
+                        <i class="bi bi-trash" (click)="openDeleteModal(fashion.id, fashion.title)"></i>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
